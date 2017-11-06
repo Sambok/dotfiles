@@ -1,9 +1,11 @@
 set nocompatible
 filetype off
 set t_Co=256
-syntax on
+set relativenumber
 set number
-colorscheme badwolf
+set cursorline
+set cursorcolumn
+set mouse=a
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -16,12 +18,14 @@ Plugin 'scrooloose/syntastic'
 
 " Colorscheme
 Plugin 'flazz/vim-colorschemes'
+Plugin 'dracula/vim'
 
 " Indentation
 Plugin 'yggdroot/indentline'
 
 " File navigation
 Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Languages
 Plugin 'gorodinskiy/vim-coloresque'
@@ -49,10 +53,18 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mattn/emmet-vim'
 
 call vundle#end()
+syntax on
+color dracula
 filetype plugin indent on
 set laststatus=2
 
 " Settings
+" ctrlp
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_working_path_mode = 'ra'
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
+
   " Tab settings
 set tabstop=2 
 set shiftwidth=2
@@ -81,7 +93,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-"let g:syntastic_ruby_checkers=["rubocop"]
 
 " Airline tabs
 let g:airline#extensions#tabline#enabled = 1
