@@ -104,3 +104,6 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Emmet
 let g:user_emmet_leader_key='<C-Z>'
+
+" CtrlP
+set wildignore+=*/node_modules/*,*/tmp/*,*.so,*.swp,*.zip,*/.git/*
